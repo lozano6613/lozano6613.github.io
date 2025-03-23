@@ -1,1 +1,273 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bolt.new Clone</title>
+    <style>
+        /* Основные стили */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #0c0d0e;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Хедер */
+        header {
+            display: flex;
+            align-items: center;
+            background-color: #0c0d0e;
+            padding-left: 1.25rem;
+            padding-right: 1rem;
+            border-bottom: 1px solid transparent;
+            height: 60px;
+        }
+
+        .logo-container {
+            display: flex;
+            flex-grow: 1;
+            flex-basis: 15rem;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+        }
+
+        .logo-link {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+
+        .react-logo {
+            color: #61dafb;
+            transition: color 0.3s;
+            width: 36px;
+            height: auto;
+        }
+
+        .react-logo:hover {
+            color: white;
+        }
+
+        .bolt-text {
+            font-weight: 500;
+            letter-spacing: -0.025em;
+        }
+
+        .new-text {
+            color: #61dafb;
+            font-weight: 400;
+        }
+
+        .header-center {
+            flex: 1;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            font-size: 0.875rem;
+            text-align: center;
+            color: white;
+        }
+
+        .header-right {
+            display: flex;
+            flex-grow: 1;
+            flex-basis: 15rem;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 0.625rem;
+        }
+
+        .social-links {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.625rem;
+        }
+
+        .social-link {
+            color: #9ca3af;
+            transition: color 0.3s;
+        }
+
+        .social-link:hover {
+            color: white;
+        }
+
+        /* Основное содержимое */
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 22vh;
+            padding-left: 2.5rem;
+            padding-right: 2.5rem;
+        }
+
+        .title {
+            font-size: 2.75rem;
+            text-align: center;
+            font-weight: 600;
+            color: white;
+            letter-spacing: -0.025em;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            margin-bottom: 1.5rem;
+            text-align: center;
+            color: #9ca3af;
+        }
+
+        .highlight {
+            color: white;
+            font-weight: 500;
+        }
+
+        /* Форма ввода */
+        .input-container {
+            width: 100%;
+            max-width: 48rem;
+            margin-bottom: 2rem;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 1rem;
+            background-color: #0c0d0e;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 0.375rem;
+            color: white;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .input-field:focus {
+            border-color: #61dafb;
+        }
+
+        .button-container {
+            width: 100%;
+            max-width: 48rem;
+            display: flex;
+            gap: 0.5rem;
+            padding: 0.5rem;
+            background-color: rgba(20, 20, 20, 0.6);
+            border-radius: 0.375rem;
+        }
+
+        .submit-button {
+            background: none;
+            border: none;
+            color: #9ca3af;
+            padding: 0.5rem;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .submit-button:hover {
+            color: white;
+        }
+
+        .favorite-button {
+            background: none;
+            border: none;
+            color: #9ca3af;
+            padding: 0.5rem;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .favorite-button:hover {
+            color: white;
+        }
+
+        /* Подвал */
+        footer {
+            display: flex;
+            justify-content: center;
+            padding: 1rem;
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <a href="/" class="logo-link">
+                <svg class="react-logo" xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 28 28">
+                    <path fill="currentColor" d="M26.573 13.944c0-1.628-2.039-3.17-5.164-4.127.721-3.186.4-5.72-1.012-6.532a2.196 2.196 0 0 0-1.122-.28v1.117c.23 0 .416.045.571.13.681.39.977 1.878.746 3.792-.055.47-.145.966-.255 1.472a24.273 24.273 0 0 0-3.18-.546 24.425 24.425 0 0 0-2.084-2.504c1.633-1.518 3.165-2.349 4.207-2.349V3c-1.377 0-3.18.982-5.004 2.685C12.453 3.992 10.65 3.02 9.273 3.02v1.117c1.036 0 2.574.826 4.207 2.334a23.639 23.639 0 0 0-2.069 2.5c-1.132.12-2.203.305-3.185.55-.115-.5-.2-.986-.26-1.452-.236-1.914.054-3.401.73-3.797.15-.09.346-.13.577-.13V3.025c-.421 0-.802.09-1.132.28-1.408.812-1.723 3.341-.997 6.517C4.029 10.784 2 12.322 2 13.944c0 1.628 2.039 3.17 5.164 4.127-.721 3.186-.4 5.72 1.012 6.532.325.19.706.28 1.127.28 1.377 0 3.18-.982 5.003-2.685 1.824 1.693 3.627 2.665 5.004 2.665.42 0 .802-.09 1.132-.28 1.407-.812 1.723-3.341.997-6.517 3.105-.956 5.134-2.5 5.134-4.122Zm-6.522-3.34a22.533 22.533 0 0 1-.676 1.978 27.086 27.086 0 0 0-1.377-2.374c.711.105 1.397.235 2.053.395Zm-2.294 5.334a26.71 26.71 0 0 1-1.207 1.913 26.066 26.066 0 0 1-4.518.005 26.128 26.128 0 0 1-2.254-3.897 26.685 26.685 0 0 1 2.244-3.912 26.051 26.051 0 0 1 4.518-.005 26.117 26.117 0 0 1 2.254 3.897 28.091 28.091 0 0 1-1.037 1.998Zm1.618-.652c.27.672.501 1.343.691 1.994-.656.16-1.347.295-2.063.4a27.72 27.72 0 0 0 1.372-2.394Zm-5.079 5.345a20.648 20.648 0 0 1-1.392-1.603c.45.02.912.035 1.377.035.471 0 .937-.01 1.393-.035-.451.586-.917 1.122-1.378 1.603Zm-3.726-2.95a22.6 22.6 0 0 1-2.054-.396c.186-.646.416-1.312.677-1.979.205.401.42.802.656 1.203.235.4.476.79.72 1.172ZM14.27 7.257c.466.481.932 1.017 1.393 1.603-.451-.02-.912-.035-1.378-.035-.47 0-.936.01-1.392.035.45-.586.916-1.122 1.377-1.603Zm-3.706 2.95a27.624 27.624 0 0 0-1.372 2.39c-.271-.671-.501-1.343-.692-1.994a24.32 24.32 0 0 1 2.064-.395Zm-4.533 6.271c-1.773-.756-2.92-1.748-2.92-2.534 0-.786 1.147-1.783 2.92-2.534.43-.186.902-.351 1.387-.506.286.982.662 2.003 1.127 3.05a23.715 23.715 0 0 0-1.112 3.035 15.23 15.23 0 0 1-1.402-.51Zm2.695 7.158c-.681-.39-.977-1.878-.747-3.792.055-.47.146-.966.256-1.472.982.24 2.053.425 3.18.546a24.43 24.43 0 0 0 2.084 2.504c-1.633 1.518-3.165 2.35-4.207 2.35a1.195 1.195 0 0 1-.566-.136Zm11.88-3.817c.236 1.914-.055 3.401-.73 3.797-.151.09-.346.13-.577.13-1.037 0-2.574-.826-4.207-2.334a23.668 23.668 0 0 0 2.068-2.5 23.393 23.393 0 0 0 3.186-.55c.115.506.205.992.26 1.457Zm1.929-3.34c-.431.185-.902.35-1.388.505a24.059 24.059 0 0 0-1.127-3.05c.461-1.042.832-2.058 1.112-3.035.496.155.967.325 1.408.51 1.773.757 2.92 1.749 2.92 2.535-.005.786-1.152 1.783-2.925 2.534Z" />
+                    <path fill="currentColor" d="M14.281 16.236a2.289 2.289 0 1 0 0-4.578 2.289 2.289 0 0 0 0 4.578Z" />
+                </svg>
+                <span class="bolt-text">Bolt<span class="new-text">.new</span></span>
+            </a>
+        </div>
+
+        <div class="header-center"></div>
+
+        <div class="header-right">
+            <div class="social-links">
+                <a href="https://x.com/boltdotnew" class="social-link" target="_blank">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.62 1.813h1.93L8.332 6.63l4.96 6.556H9.409L6.368 9.212l-3.48 3.976H.955l4.55-5.189L.784 1.813h4.043l2.731 3.543 3.063-3.543zm.61 2.252L5.224 11.48l6.006 0-5.032-7.023 5.032-0.392z" />
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/company/stackblitz" class="social-link" target="_blank">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M451.2 451.2h-78.5V328.3c0-29.3-.5-67-40.8-67s-47.1 31.9-47.1 64.9v125H206.3V206h75.2v34.4c10.6-20.3 36.5-39 75.1-39 80.5 0 95.3 52.9 95.3 121.8v128zM137.7 171.6C108.4 171.6 85 148 85 118.7c0-29.2 23.4-52.8 52.7-52.8 29.2 0 52.6 23.6 52.6 52.8 0 29.3-23.4 52.9-52.6 52.9zm39.3 279.6h-78.5V206h78.5v245.2zM489.7 0H41.3C18.5 0 0 18 0 40.2v450.6C0 512.8 18.5 531 41.3 531h448.4c22.8 0 41.3-18.2 41.3-40.2V40.2C531 18 512.5 0 489.7 0z" transform="scale(0.045)" />
+                    </svg>
+                </a>
+                <a href="https://discord.com/invite/stackblitz" class="social-link" target="_blank">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M26.914 4.865 14.7 26.771a.663.663 0 0 1-1.155.005L1.088 4.867a.665.665 0 0 1 .124-.79.659.659 0 0 1 .435-.16h9.496c.218 0 .412.13.504.317l5.239 10.41c.304.57 1.172.57 1.475 0l5.273-10.41a.567.567 0 0 1 .504-.317h7.75c.223 0 .427.08.579.218a.68.68 0 0 1 .182.562.643.643 0 0 1-.735.168Z" transform="scale(0.85)" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <h1 class="title">Что вы хотите узнать сейчас?</h1>
+        <p class="subtitle">
+            <span>Создавайте, запускайте, редактируйте и развертывайте полнофункциональные</span>
+            <span class="highlight">веб</span> и
+            <span class="highlight">мобильные</span> приложения.
+        </p>
+
+        <div class="input-container">
+            <input type="text" class="input-field" placeholder="Как я могу помочь тебе сегодня?">
+        </div>
+
+        <div class="button-container">
+            <button class="submit-button">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </button>
+            <button class="favorite-button">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/>
+                </svg>
+            </button>
+        </div>
+    </main>
+
+    <footer>
+        <div>© 2023 Bolt.new Clone</div>
+    </footer>
+</body>
+</html>
