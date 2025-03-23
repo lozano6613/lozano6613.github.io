@@ -34,12 +34,8 @@ const nextConfig = {
   },
   // Настройки для Netlify
   trailingSlash: false,
-
-  // Изменяем обратно на standalone для лучшей совместимости с Netlify
-  output: 'standalone',
-
-  // Отключаем строгий режим для большей совместимости
-  reactStrictMode: false,
+  output: 'export', // Изменено с 'standalone' на 'export' для статической генерации
+  distDir: '.next',
 };
 
 export default nextConfig;
