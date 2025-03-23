@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Страница не найдена | Bolt.new</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #0c0d0e;
+            color: #ffffff;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            padding: 0 20px;
+        }
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 0.5rem;
+            color: #61dafb;
+        }
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        p {
+            color: #aaaaaa;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        a {
+            background-color: #61dafb;
+            color: #0c0d0e;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        a:hover {
+            background-color: #4db6e5;
+        }
+    </style>
+    <!-- Выполним JavaScript-перенаправление для клиентских маршрутов в SPA -->
+    <script>
+        // Проверка, является ли текущий URL обычным путем приложения (не ресурсом)
+        const isAppRoute = !window.location.pathname.match(/\.[a-zA-Z0-9]{2,4}$/);
+
+        // Если это клиентский маршрут, перенаправляем на главную страницу
+        if (isAppRoute) {
+            window.location.href = '/';
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>404</h1>
+        <h2>Страница не найдена</h2>
+        <p>Страница, которую вы пытаетесь найти, не существует или была перемещена.</p>
+        <a href="/">Вернуться на главную</a>
+    </div>
+</body>
+</html>
