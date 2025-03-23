@@ -3,7 +3,7 @@
 
 [build]
   command = "bun run build"
-  publish = "out"
+  publish = ".next"
   ignore = "false"
 
 [build.environment]
@@ -39,17 +39,7 @@
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
-# Обеспечение перенаправления для NextJS
-[[redirects]]
-  from = "/_next/static/*"
-  to = "/static/:splat"
-  status = 200
-
-[[redirects]]
-  from = "/_next/image"
-  to = "/_ipx"
-  status = 200
-
+# Простые правила перенаправления для корректной работы SPA
 [[redirects]]
   from = "/*"
   to = "/index.html"
